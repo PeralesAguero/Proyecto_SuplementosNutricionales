@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    font-weight: 600;
+    font-size: 20px;
+    background: rgba(120, 125, 145, 0.95);
+}
+.navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 2rem;
+}
+.navbar .bi-heart,
+.navbar .bi-basket {
+    color: #fff;
+}
+.navbar .badge {
+    font-size: 0.9rem;
+    padding: 0.35em 0.6em;
+}
+
+/* Carrusel tamaño reducido y centrado */
+#carouselE1 {
+    height: 350px;
+    margin-top: 80px;
+    overflow: hidden;
+}
+#carouselE1 .carousel-inner,
+#carouselE1 .carousel-item,
+#carouselE1 img {
+    height: 350px;
+}
+#carouselE1 img {
+    object-fit: cover;
+}
+
+/* Centrar el contenido del carrusel y mejorar legibilidad */
+#carouselE1 .carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    background: rgba(0,0,0,0.35);
+    border-radius: 12px;
+    padding: 20px 10px;
+    z-index: 2;
+}
+#carouselE1 .carousel-caption h5 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    font-weight: 600;
+    color: #fff;
+}
+#carouselE1 .carousel-caption p {
+    width: 100%;
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #fff;
+}
+#carouselE1 .carousel-caption a {
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Separar sección de iconos del carrusel */
+.section-icons {
+    margin-top: 48px;
+}
+
+/* Carrusel de testimonios: altura y alineación */
+#carouselTestimonios .carousel-item {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+}
+
+#carouselTestimonios .row {
+    width: 100%;
+    margin: 0;
+}
+
+#carouselTestimonios .bg-white {
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    transition: box-shadow 0.2s;
+}
+
+#carouselTestimonios .bg-white:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+/* Indicadores opcionales para testimonios */
+#carouselTestimonios .carousel-indicators {
+    bottom: -30px;
+}
+
+/* Responsive para testimonios */
+@media (max-width: 991px) {
+    #carouselTestimonios .col-lg-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #carouselTestimonios .carousel-item {
+        min-height: 420px;
+    }
+}
+
+@media(max-width: 767px){
+    #carouselE1 {
+        height: 220px;
+    }
+    #carouselE1 .carousel-inner,
+    #carouselE1 .carousel-item,
+    #carouselE1 img {
+        height: 220px;
+    }
+    #carouselE1 .carousel-caption {
+        padding: 10px 5px;
+        max-width: 95vw;
+    }
+    #carouselE1 .carousel-caption h5 {
+        font-size: 1.2rem;
+    }
+    #carouselE1 .carousel-caption p {
+        font-size: 0.9rem;
+    }
+}

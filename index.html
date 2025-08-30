@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitBoost - Suplementos Nutricionales</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+  <!-- Iconos Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
+    <div class="container">
+      <a href="#" class="navbar-brand fw-bold"><span class="text-primary">Fit</span>Boost</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-star"
+        aria-controls="navbar-star" aria-expanded="false" aria-label="Menú de navegación">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-star">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#" class="nav-link active">Inicio</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Productos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Carrusel -->
+  <div id="carouselE1" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselE1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="imagenes/portada01.png" class="d-block w-100" alt="Portada suplementos deportivos 1">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/portada02.jpg" class="d-block w-100" alt="Portada suplementos deportivos 2">
+      </div>
+      <div class="carousel-item">
+        <img src="imagenes/portada03.jpg" class="d-block w-100" alt="Portada suplementos deportivos 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselE1" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselE1" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+
+  <!-- Beneficios -->
+  <section class="section-icons py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-4 mb-3">
+          <i class="bi bi-airplane fs-1 text-primary"></i>
+          <h4 class="mt-2">Envío Gratis</h4>
+          <p>En compras mayores a $5000</p>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <i class="bi bi-cash-coin fs-1 text-success"></i>
+          <h4 class="mt-2">Devoluciones</h4>
+          <p>Si no te gusta, te devolvemos tu dinero</p>
+        </div>
+        <div class="col-lg-4 mb-3">
+          <i class="bi bi-gift-fill fs-1 text-danger"></i>
+          <h4 class="mt-2">Regalo</h4>
+          <p>En compras mayores a $5000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos -->
+  <section class="Productos py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Productos Destacados</h2>
+        <p class="text-muted">Suplementos de la mejor calidad para tu rendimiento.</p>
+      </div>
+      <div class="row g-4">
+
+        <!-- Producto 1 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/suple1.png" class="card-img-top" alt="Proteína whey">
+            <div class="card-body">
+              <h5 class="card-title">Proteína Whey</h5>
+              <p class="card-text">Aumenta tu masa muscular y mejora tu recuperación.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/suple2.png" class="card-img-top" alt="Creatina monohidratada">
+            <div class="card-body">
+              <h5 class="card-title">Creatina</h5>
+              <p class="card-text">Mejora tu fuerza, potencia y rendimiento deportivo.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/suple3.png" class="card-img-top" alt="BCAA aminoácidos">
+            <div class="card-body">
+              <h5 class="card-title">BCAA</h5>
+              <p class="card-text">Recuperación y energía en entrenamientos intensos.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/suple4.png" class="card-img-top" alt="Pre workout suplemento">
+            <div class="card-body">
+              <h5 class="card-title">Pre-Workout</h5>
+              <p class="card-text">Explosión de energía y enfoque para tus rutinas.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/suple5.png" class="card-img-top" alt="Multivitamínico">
+            <div class="card-body">
+              <h5 class="card-title">Multivitamínico</h5>
+              <p class="card-text">Complejo vitamínico para tu salud y bienestar diario.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 6 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/suple6.png" class="card-img-top" alt="Omega 3">
+            <div class="card-body">
+              <h5 class="card-title">Omega 3</h5>
+              <p class="card-text">Mejora la salud cardiovascular y cognitiva.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 7 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/gym.jpg" class="card-img-top" alt="Accesorios de gimnasio">
+            <div class="card-body">
+              <h5 class="card-title">Accesorios</h5>
+              <p class="card-text">Cinturones, guantes y más para complementar tu entrenamiento.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card shadow-sm border-0 h-100">
+            <img src="imagenes/gym.jpg" class="card-img-top" alt="Ropa deportiva">
+            <div class="card-body">
+              <h5 class="card-title">Ropa Deportiva</h5>
+              <p class="card-text">Comodidad y estilo para tus entrenamientos.</p>
+              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <section class="banner text-center py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold">Los Mejores Productos Para Ti</h2>
+      <p>Seleccionamos lo mejor en nutrición deportiva para que alcances tus metas.</p>
+      <img src="imagenes/nutricion.jpg" class="img-fluid rounded shadow" alt="Nutrición deportiva">
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonios py-5" style="background: #f2f2f2;">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Esto Dicen Nuestros Clientes</h2>
+      </div>
+      <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4 justify-content-center">
+              <div class="col-md-4">
+                <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+                  <h5>Creatina</h5>
+                  <div class="text-warning">★★★★★</div>
+                  <p>"Mejoró mi rendimiento y recuperación. ¡Muy recomendada!"</p>
+                  <p class="mb-0 fw-bold">- Miguel</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+                  <h5>BCAA</h5>
+                  <div class="text-warning">★★★★★</div>
+                  <p>"Me ayudan a mantener mi energía durante entrenamientos intensos."</p>
+                  <p class="mb-0 fw-bold">- Andrea</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+                  <h5>Pre-Workout</h5>
+                  <div class="text-warning">★★★★★</div>
+                  <p>"El impulso que necesito para cada sesión. ¡No lo cambio por nada!"</p>
+                  <p class="mb-0 fw-bold">- Luis</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Aquí podrías añadir más slides si lo deseas -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section class="Contacto py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold">Contáctanos</h2>
+        <p class="text-muted">¿Tienes dudas? Escríbenos y te responderemos lo antes posible.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <form class="bg-light p-4 rounded shadow-sm">
+            <input class="form-control mb-3" placeholder="Nombre Completo" type="text" required>
+            <input class="form-control mb-3" placeholder="Email" type="email" required>
+            <textarea class="form-control mb-3" placeholder="Mensaje" rows="3" required></textarea>
+            <button class="btn btn-primary w-100" type="submit">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-3 text-center">
+    <p class="mb-0">Todos los derechos reservados © 2025 FitBoost</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
