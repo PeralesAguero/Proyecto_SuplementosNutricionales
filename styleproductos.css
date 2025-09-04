@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap');
+* {
+    font-family: 'Poppins', sans-serif;
+}
 body {
   background: #f8f9fa;
 }
@@ -86,4 +90,62 @@ body {
     margin-left: 0;
     padding: 16px;
   }
+}
+
+/* Estilos para la barra de navegación FitBoost */
+.navbar-fitboost .logo-fitboost {
+  color: #1769ff;
+}
+
+.navbar-fitboost .buscador-fitboost {
+  max-width: 600px;
+  width: 100%;
+}
+
+.navbar-fitboost .cart-badge {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  padding: 0.2em 0.5em;
+}
+
+/* Estilo para el logo FitBoost */
+.logo-fitboost {
+  color: #1769ff;
+}
+
+/* Buscador centrado y ancho máximo */
+.buscador-fitboost {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Badge del carrito en la posición correcta */
+.cart-badge {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  font-size: 0.9rem;
+  padding: 0.2em 0.5em;
+}
+
+.navbar {
+    font-weight: 600;
+    font-size: 20px;
+    background: rgba(120, 125, 145, 0.95);
+}
+.navbar .navbar-brand {
+    font-weight: bold;
+    font-size: 2rem;
+}
+.navbar .bi-heart,
+.navbar .bi-basket {
+    color: #fff;
+}
+.navbar .badge {
+    font-size: 0.9rem;
+    padding: 0.35em 0.6em;
 }
