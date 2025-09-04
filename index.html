@@ -33,8 +33,8 @@
       <div class="collapse navbar-collapse" id="navbar-star">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a href="#" class="nav-link active">Inicio</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Productos</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+          <li class="nav-item"><a href="Productos.html" class="nav-link">Productos</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Nosotros</a></li>
           <!-- Carrito de compras -->
           <li class="nav-item ms-3">
             <a href="#" class="nav-link position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
@@ -110,7 +110,7 @@
   </section>
 
   <!-- Productos -->
-  <section class="Productos py-5">
+  <section class="Productos py-5" id="productos">
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="fw-bold">Productos Destacados</h2>
@@ -223,58 +223,65 @@
     <div class="container">
       <h2 class="fw-bold">Los Mejores Productos Para Ti</h2>
       <p>Seleccionamos lo mejor en nutrición deportiva para que alcances tus metas.</p>
-      <img src="imagenes/portada04.webp" class="img-fluid rounded shadow" alt="Nutrición deportiva">
+      <img src="imagenes/portada05.webp" class="img-fluid rounded shadow" alt="Nutrición deportiva">
     </div>
   </section>
 
-  <!-- Testimonios -->
+  <!-- Testimonios en formato normal, sin carrusel -->
   <section class="testimonios py-5" style="background: #f2f2f2;">
     <div class="container">
       <div class="text-center mb-4">
         <h2 class="fw-bold">Esto Dicen Nuestros Clientes</h2>
       </div>
-      <div id="carouselTestimonios" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row g-4 justify-content-center">
-              <div class="col-md-4">
-                <div class="bg-white rounded-4 shadow-sm p-4 h-100">
-                  <h5>Creatina</h5>
-                  <div class="text-warning">★★★★★</div>
-                  <p>"Mejoró mi rendimiento y recuperación. ¡Muy recomendada!"</p>
-                  <p class="mb-0 fw-bold">- Miguel</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="bg-white rounded-4 shadow-sm p-4 h-100">
-                  <h5>BCAA</h5>
-                  <div class="text-warning">★★★★★</div>
-                  <p>"Me ayudan a mantener mi energía durante entrenamientos intensos."</p>
-                  <p class="mb-0 fw-bold">- Andrea</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="bg-white rounded-4 shadow-sm p-4 h-100">
-                  <h5>Pre-Workout</h5>
-                  <div class="text-warning">★★★★★</div>
-                  <p>"El impulso que necesito para cada sesión. ¡No lo cambio por nada!"</p>
-                  <p class="mb-0 fw-bold">- Luis</p>
-                </div>
-              </div>
-            </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-4">
+          <div class="bg-white rounded-4 shadow-sm p-4 h-100 text-center">
+            <h5>Creatina</h5>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-3">"Mejoró mi rendimiento y recuperación. ¡Muy recomendada!"</p>
+            <p class="mb-0 fw-bold">- Miguel</p>
           </div>
-          <!-- Aquí podrías añadir más slides si lo deseas -->
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonios"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonios"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
+        <div class="col-md-4">
+          <div class="bg-white rounded-4 shadow-sm p-4 h-100 text-center">
+            <h5>BCAA</h5>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-3">"Me ayudan a mantener mi energía durante entrenamientos intensos."</p>
+            <p class="mb-0 fw-bold">- Andrea</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-white rounded-4 shadow-sm p-4 h-100 text-center">
+            <h5>Pre-Workout</h5>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-3">"El impulso que necesito para cada sesión. ¡No lo cambio por nada!"</p>
+            <p class="mb-0 fw-bold">- Luis</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-white rounded-4 shadow-sm p-4 h-100 text-center">
+            <h5>Multivitamínico</h5>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-3">"Me siento con más energía y vitalidad cada día."</p>
+            <p class="mb-0 fw-bold">- Carla</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-white rounded-4 shadow-sm p-4 h-100 text-center">
+            <h5>Omega 3</h5>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-3">"Mi salud cardiovascular ha mejorado notablemente."</p>
+            <p class="mb-0 fw-bold">- Juan</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-white rounded-4 shadow-sm p-4 h-100 text-center">
+            <h5>Carnitech Proteine</h5>
+            <div class="text-warning mb-2">★★★★★</div>
+            <p class="mb-3">"Ideal para ganar masa muscular de forma rápida."</p>
+            <p class="mb-0 fw-bold">- Sofía</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -304,42 +311,41 @@
     <div class="container py-4">
       <div class="row">
         <div class="col-6 col-md-2 mb-3">
-          <h5>Sección</h5>
+          <h5>Links Importantes</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hogar</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Características</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Precios</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politicas de privacidad</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Politicas de Cokies</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terminos y Condiciones</a></li>
             <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Preguntas frecuentes</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acerca de</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Libro de Reclamaciones</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-2 mb-3">
-          <h5>Sección</h5>
+          <h5>Categorias</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hogar</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Características</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Precios</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Preguntas frecuentes</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acerca de</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Bienestar y Salud</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Energia</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Ganancia Muscular</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Perdida de Peso</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Promociones</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-2 mb-3">
-          <h5>Sección</h5>
+          <h5>Atencion y Soporte</h5>
           <ul class="nav flex-column">
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Hogar</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Características</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Precios</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Preguntas frecuentes</a></li>
-            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Acerca de</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Comunicate con Nosotros:</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">987654321 - 945672356</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Nosotros</a></li>
+            <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Conviertete en Distribuidor</a></li>
           </ul>
         </div>
         <div class="col-md-4 offset-md-2 mb-3">
           <form>
-            <h5>Suscríbete a nuestro boletín</h5>
-            <p class="text-muted">Resumen mensual de nuestras novedades y novedades más interesantes.</p>
+            <h5>Contactate con Nosotros</h5>
+            <p class="text-muted">Dejanos tu correo y nos pondremos en contacto contigo</p>
             <div class="d-flex flex-column flex-sm-row w-100 gap-2">
               <input type="email" class="form-control" placeholder="Dirección de correo electrónico">
-              <button class="btn btn-primary" type="submit">Suscribir</button>
+              <button class="btn btn-primary" type="submit">Enviar</button>
             </div>
           </form>
         </div>
