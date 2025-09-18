@@ -48,60 +48,253 @@
     </div>
   </nav>
 
-
+  <!-- Sidebar -->
   <div class="sidebar-lateral">
-    <div class="d-flex align-items-center px-3 pt-4 pb-2">
-      <span class="fs-4 fw-semibold ms-1">FitBoost</span>
-    </div>
-    <hr>
     <ul class="nav flex-column px-2">
       <li class="nav-item mb-2">
-        <a class="nav-link active d-flex align-items-center sidebar-btn" href="#">
-          <!-- Bienestar y Salud: corazón -->
-          <i class="bi bi-heart-pulse me-2 fs-4"></i>
-          <span class="sidebar-text">Bienestar y Salud</span>
+        <a class="nav-link active d-flex align-items-center sidebar-btn" data-section="salud" href="#">
+          <i class="bi bi-heart-pulse me-2 fs-4"></i> Bienestar y Salud
         </a>
       </li>
       <li class="nav-item mb-2">
-        <a class="nav-link d-flex align-items-center sidebar-btn" href="#">
-          <!-- Energía: rayo -->
-          <i class="bi bi-lightning-charge me-2 fs-4"></i>
-          <span class="sidebar-text">Energia</span>
+        <a class="nav-link d-flex align-items-center sidebar-btn" data-section="energia" href="#">
+          <i class="bi bi-lightning-charge me-2 fs-4"></i> Energía
         </a>
       </li>
       <li class="nav-item mb-2">
-        <a class="nav-link d-flex align-items-center sidebar-btn" href="#">
-          <!-- Ganancia Muscular: dumbbell/trophy -->
-         <i class="bi bi-trophy me-2 fs-4"></i>
-          <span class="sidebar-text">Ganancia Muscular</span>
+        <a class="nav-link d-flex align-items-center sidebar-btn" data-section="muscular" href="#">
+          <i class="bi bi-trophy me-2 fs-4"></i> Ganancia Muscular
         </a>
       </li> 
       <li class="nav-item mb-2">
-        <a class="nav-link d-flex align-items-center sidebar-btn" href="#">
-          <!-- Recuperación Muscular: corazón con pulso -->
-          <i class="bi bi-activity me-2 fs-4"></i>
-          <span class="sidebar-text">Recuperación Muscular</span>
+        <a class="nav-link d-flex align-items-center sidebar-btn" data-section="recuperacion" href="#">
+          <i class="bi bi-activity me-2 fs-4"></i> Recuperación Muscular
         </a>
       </li>
       <li class="nav-item mb-2">
-        <a class="nav-link d-flex align-items-center sidebar-btn" href="#">
-          <!-- Perdida de Peso: flecha hacia abajo dentro de círculo -->
-          <i class="bi bi-arrow-down-circle me-2 fs-4"></i>
-          <span class="sidebar-text">Perdida de Peso</span>
+        <a class="nav-link d-flex align-items-center sidebar-btn" data-section="peso" href="#">
+          <i class="bi bi-arrow-down-circle me-2 fs-4"></i> Pérdida de Peso
         </a>
       </li>
       <li class="nav-item mb-2">
-        <a class="nav-link d-flex align-items-center sidebar-btn" href="#">
-          <!-- Promociones: etiqueta -->
-          <i class="bi bi-tag me-2 fs-4"></i>
-          <span class="sidebar-text">Promociones</span>
+        <a class="nav-link d-flex align-items-center sidebar-btn" data-section="promos" href="#">
+          <i class="bi bi-tag me-2 fs-4"></i> Promociones
         </a>
       </li>
     </ul>
-    <hr class="mt-auto">
   </div>
-  <div class="contenido-principal">
-    <!-- Aquí va el contenido principal de productos -->
+
+<!-- Contenido principal -->
+<div class="contenido-principal">
+  
+  <!-- Secciones -->
+
+  <div id="bienestarSalud" class="contenido-section">
+    <h2 class="mb-4">Bienestar y Salud</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/Multivitaminicos.jpg" class="card-img-top" alt="Vitaminas">
+          <div class="card-body">
+            <h5 class="card-title"> 8 Suplementos de Gym Multivitamínicos</h5>
+            <p class="card-text">Estos suplementos gym te ayudarán a obtener un excelente
+              entrenamiento en el gimnasio para ganar músculo y quemar grasa.
+              Los suplementos gym pueden</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/omega3.jpeg" class="card-img-top" alt="Omega 3">
+          <div class="card-body">
+            <h5 class="card-title">Omega-3 Aceite de Pescado</h5>
+            <p class="card-text">GAT Sport Omega-3 aporta 800mg de ácidos grasos Omega-3.
+              Es bien sabido que los Omega-3 son excelentes para todos para la salud del
+              corazón. Pero para los atletas competitivos, los beneficios de Omega-3 va
+              mucho más allá. Los ácidos grasos Omega-3 pueden impulsar la salud general
+              y ofrecer beneficios que mejoran el rendimiento en los atletas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/colageno.png" class="card-img-top" alt="Colágeno">
+          <div class="card-body">
+            <h5 class="card-title">COLLAGEN PRO</h5>
+            <p class="card-text">Es un complemento rico en COLÁGENO, la proteína más
+              abundante del cuerpo y elemento principal de la piel, huesos, tendones,
+              cartílagos, vasos sanguíneos y dientes. “UN” elaboró un excelente producto
+              a base de COLÁGENO HIDROLIZADO que al combinarlo con la VITAMINA B6,VITAMINA C,
+              MAGNESIO Y ZINC potencia la acción
+              de esta proteína en el cuerpo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div id="energia" class="contenido-section d-none">
+    <h2 class="mb-4">⚡ Energía</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/preentreno.webp" class="card-img-top" alt="Pre-entreno">
+          <div class="card-body">
+            <h5 class="card-title">Pre-entreno</h5>
+            <p class="card-text">Son suplementos diseñados para mejorar el rendimiento,
+              aumentar la energía y concentración, y potenciar la fuerza y resistencia
+              durante el entrenamiento. En esta guía te explicamos qué son, para qué sirven,
+              cómo tomarlos, y qué opciones tenemos disponibles.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/bebidaenergetica.jpg" class="card-img-top" alt="Bebida energética">
+          <div class="card-body">
+            <h5 class="card-title">Bebida Energética</h5>
+            <p class="card-text">La mejor bebida para consumir durante una larga sesión
+              de entrenamiento o competencia es el agua enriquecida con electrolitos,
+              como el potasio y el sodio, que ayuda a sustituir los minerales perdidos
+              a través del sudor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="muscular" class="contenido-section d-none">
+    <h2 class="mb-4">💪 Ganancia Muscular</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/proteinawhey.webp" class="card-img-top" alt="Proteína">
+          <div class="card-body">
+            <h5 class="card-title">Proteína Whey</h5>
+            <p class="card-text"> Es un subproducto del proceso de fabricación del queso.
+              Se obtiene del suero de leche, que es el líquido que queda después de la
+              coagulación de la leche. Este líquido es rico en proteínas de alto valor
+              biológico y se utiliza para elaborar suplementos nutricionales en polvo, así
+              como para fortificar alimentos como yogures y productos de panadería.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/creatina.webp" class="card-img-top" alt="Creatina">
+          <div class="card-body">
+            <h5 class="card-title">Creatina</h5>
+            <p class="card-text"> Ácido α-metil guanido-acético, es un ácido orgánico
+              nitrogenado que se encuentra en los músculos y células nerviosas de algunos
+              organismos vivos. Se puede obtener tanto de manera.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="recuperacion" class="contenido-section d-none">
+    <h2 class="mb-4">🩹 Recuperación Muscular</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/bcaa.jpg" class="card-img-top" alt="BCAA">
+          <div class="card-body">
+            <h5 class="card-title">BCAA</h5>
+            <p class="card-text">Son un grupo de aminoácidos esenciales que incluyen leucina,
+              isoleucina y valina. Sirven para promover el aumento de masa muscular, regular
+              el sistema inmunológico, facilitar la recuperación tras el ejercicio y mantener
+              la salud del sistema nervioso. Además, los BCAA ayudan a preservar la masa muscular
+              durante entrenamientos intensivos y actúan como transportadores de nitrógeno, lo que
+              es crucial para la síntesis de nuevas fibras musculares. También son populares entre
+              los deportistas por sus beneficios en el rendimiento y la pérdida de grasa.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/GLUTAMINA.jpg" class="card-img-top" alt="Glutamina">
+          <div class="card-body">
+            <h5 class="card-title">Glutamina</h5>
+            <p class="card-text">Es un aminoácido que juega un papel crucial en la formación de
+              proteínas y es considerado un inmunonutriente debido a su participación en la producción
+              de antioxidantes y en el mantenimiento de las funciones del sistema inmunológico. Además,
+              es conocido por su implicación en la recuperación muscular, siendo uno de los suplementos
+              más utilizados en el ámbito deportivo. La glutamina también proporciona nitrógeno al organismo,
+              lo que la convierte en una molécula ideal para diversas actividades metabólicas. Es importante
+              considerar su uso y dosis adecuadas, así como posibles efectos secundarios.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="peso" class="contenido-section d-none">
+    <h2 class="mb-4">🔥 Pérdida de Peso</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/termogenico.jpg" class="card-img-top" alt="Termogénico">
+          <div class="card-body">
+            <h5 class="card-title">Termogénico</h5>
+            <p class="card-text">Los termogénicos son un tipo de moléculas capaz de aumentar la temperatura
+              del cuerpo. Los termogénicos no son capaces de eliminar grasa corporal de forma directa. Sin
+              embargo, uno de sus efectos es una mayor quema de grasas por al aumento de la actividad física.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="imagenes/sustitutodecomida1.png" class="card-img-top" alt="Sustituto de comida">
+          <div class="card-body">
+            <h5 class="card-title">Sustituto de Comida</h5>
+            <p class="card-text">Son ideales para quemar grasa y proporcionan saciedad. Busca opciones con alto
+              contenido de fibra y bajo contenido de sodio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="promos" class="contenido-section d-none">
+    <h2 class="mb-4">🎉 Promociones</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-success">
+          <div class="card-body">
+            <h5 class="card-title text-success">Combo Quemagrasa </h5>
+            <p class="card-text">Quemador + suplemento termogénico.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-primary">
+          <div class="card-body">
+            <h5 class="card-title text-primary">L-Cartinita 3000 + Lipo 6 UC + BCAA Amino Hydrate</h5>
+            <p class="card-text">L-carnitina liquida + quemador +aminoácidos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-primary">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Mutant Whey + Creakong</h5>
+            <p class="card-text">20% de descuento en combo especial.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-primary">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Isophorm + Creatina</h5>
+            <p class="card-text">20% de descuento en combo especial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="productos.js"></script>
 </body>
 </html>
