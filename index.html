@@ -287,24 +287,50 @@
   </section>
 
   <!-- Contacto -->
-  <section class="Contacto py-5">
-    <div class="container">
-      <div class="text-center mb-4">
-        <h2 class="fw-bold">Contáctanos</h2>
-        <p class="text-muted">¿Tienes dudas? Escríbenos y te responderemos lo antes posible.</p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-6">
-          <form class="bg-light p-4 rounded shadow-sm">
-            <input class="form-control mb-3" placeholder="Nombre Completo" type="text" required>
-            <input class="form-control mb-3" placeholder="Email" type="email" required>
-            <textarea class="form-control mb-3" placeholder="Mensaje" rows="3" required></textarea>
-            <button class="btn btn-primary w-100" type="submit">Enviar Mensaje</button>
-          </form>
-        </div>
+<section class="Contacto py-5">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Contáctanos</h2>
+      <p class="text-muted">¿Tienes dudas? Escríbenos y te responderemos lo antes posible.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <form id="contact-form" class="bg-light p-4 rounded shadow-sm">
+          <input class="form-control mb-3" name="user_name" placeholder="Nombre Completo" type="text" required>
+          <input class="form-control mb-3" name="user_email" placeholder="Email" type="email" required>
+          <textarea class="form-control mb-3" name="message" placeholder="Mensaje" rows="3" required></textarea>
+          <button class="btn btn-primary w-100" type="submit">Enviar Mensaje</button>
+        </form>
+        <p id="form-status" class="text-center mt-3"></p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("Tservice_iist94o"); // Tu Public Key de EmailJS
+  })();
+
+  // Capturamos el evento submit del formulario
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault(); // Evita que se recargue la página
+
+    // Enviamos el formulario usando EmailJS
+    emailjs.sendForm("service_z3274rc", "template_contacto", this) // <--- Aquí pones tu Template ID
+      .then(function() {
+        document.getElementById("form-status").innerHTML =
+          "<span class='text-success'>✅ Mensaje enviado con éxito</span>";
+      }, function(error) {
+        document.getElementById("form-status").innerHTML =
+          "<span class='text-danger'>❌ Error al enviar: " + JSON.stringify(error) + "</span>";
+      });
+  });
+</script>
+
+
 
   <!-- Footer Bootstrap -->
   <footer class="bg-light mt-5 border-top">
@@ -378,11 +404,11 @@
               <form>
                 <div class="row mb-3">
                   <div class="col">
-                    <label class="form-label">Nombre de pila</label>
+                    <label class="form-label">Nombres</label>
                     <input type="text" class="form-control">
                   </div>
                   <div class="col">
-                    <label class="form-label">Apellido</label>
+                    <label class="form-label">Apellidos</label>
                     <input type="text" class="form-control">
                   </div>
                 </div>
@@ -405,24 +431,47 @@
                   <label class="form-label">Dirección 2 <span class="text-muted">(Opcional)</span></label>
                   <input type="text" class="form-control" placeholder="Apartamento o suite">
                 </div>
-                <div class="row mb-3">
-                  <div class="col-md-4">
-                    <label class="form-label">País</label>
-                    <select class="form-select">
-                      <option>Elegir...</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="form-label">Estado</label>
-                    <select class="form-select">
-                      <option>Elegir...</option>
-                    </select>
-                  </div>
-                  <div class="col-md-4">
-                    <label class="form-label">Cremallera</label>
-                    <input type="text" class="form-control">
-                  </div>
+
+                <div class="row g-3 mb-3">
+                <!-- País -->
+                <div class="col-md-4">
+                  <label for="pais" class="form-label">País</label>
+                  <select id="pais" name="pais" class="form-select" required>
+                    <option value="" selected disabled>Seleccione un país...</option>
+                    <option value="pe">Perú</option>
+                    <option value="mx">México</option>
+                    <option value="ar">Argentina</option>
+                    <option value="cl">Chile</option>
+                    <option value="es">España</option>
+                  </select>
                 </div>
+
+                <!-- Estado -->
+                <div class="col-md-4">
+                  <label for="estado" class="form-label">Estado / Provincia</label>
+                  <select id="estado" name="estado" class="form-select" required>
+                    <option value="" selected disabled>Seleccione un estado...</option>
+                    <!-- Aquí puedes cargar dinámicamente según el país -->
+                    <option value="lima">Lima</option>
+                    <option value="cusco">Cusco</option>
+                    <option value="arequipa">Arequipa</option>
+                  </select>
+                </div>
+
+                <!-- Código Postal -->
+                <div class="col-md-4">
+                  <label for="codigoPostal" class="form-label">Código Postal</label>
+                  <input 
+                    type="text" 
+                    id="codigoPostal" 
+                    name="codigoPostal" 
+                    class="form-control" 
+                    placeholder="Ej: 15001" 
+                    maxlength="10" 
+                    required>
+                </div>
+              </div>
+
                 <div class="form-check mb-2">
                   <input type="checkbox" class="form-check-input" id="direccionIgual">
                   <label class="form-check-label" for="direccionIgual">La dirección de envío es la misma que mi dirección de facturación.</label>
@@ -432,42 +481,107 @@
                   <label class="form-check-label" for="guardarInfo">Guarde esta información para la próxima vez.</label>
                 </div>
                 <hr>
-                <h4 class="mb-3 fw-bold">Pago</h4>
+
+                <!-- Métodos de Pago -->
                 <div class="mb-3">
+                  <label class="mb-3 fw-bold">Método de Pago</label>
+
+                  <!-- Visa -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pago" id="credito" checked>
-                    <label class="form-check-label" for="credito">Tarjeta de crédito</label>
+                    <input class="form-check-input" type="radio" name="pago" id="visa" value="visa" checked>
+                    <label class="form-check-label" for="visa">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:20px;">
+                    </label>
                   </div>
+
+                  <!-- Pago en efectivo -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pago" id="debito">
-                    <label class="form-check-label" for="debito">Tarjeta de débito</label>
+                    <input class="form-check-input" type="radio" name="pago" id="efectivo" value="efectivo">
+                    <label class="form-check-label" for="efectivo">
+                      <i class="bi bi-cash-coin text-success"></i> Pago en efectivo
+                    </label>
                   </div>
+
+                  <!-- Yape -->
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pago" id="paypal">
-                    <label class="form-check-label" for="paypal">PayPal</label>
+                    <input class="form-check-input" type="radio" name="pago" id="yape" value="yape">
+                    <label class="form-check-label" for="yape">
+                      <img src="/imagenes/yape.png" alt="Yape" style="height:20px;"> Yape
+                    </label>
+                  </div>
+
+                  <!-- Plin -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pago" id="plin" value="plin">
+                    <label class="form-check-label" for="plin">
+                      <img src="/imagenes/plin.png" alt="Plin" style="height:20px;"> Plin
+                    </label>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <div class="col-md-6">
-                    <label class="form-label">Nombre en la tarjeta</label>
-                    <input type="text" class="form-control">
-                    <small class="text-muted">Nombre completo tal como aparece en la tarjeta</small>
+
+                <!-- Datos de Tarjeta -->
+                <div id="tarjetaDatos">
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label for="nombreTarjeta" class="form-label">Nombre en la tarjeta</label>
+                      <input type="text" id="nombreTarjeta" class="form-control" placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="numeroTarjeta" class="form-label">Número de Tarjeta</label>
+                      <input type="text" id="numeroTarjeta" class="form-control" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label">Número de Tarjeta de Crédito</label>
-                    <input type="text" class="form-control">
+                  <div class="row mb-4">
+                    <div class="col-md-3">
+                      <label for="vencimiento" class="form-label">Vencimiento</label>
+                      <input type="text" id="vencimiento" class="form-control" placeholder="MM/AA">
+                    </div>
+                    <div class="col-md-3">
+                      <label for="cvv" class="form-label">CVV</label>
+                      <input type="text" id="cvv" class="form-control" placeholder="123">
+                    </div>
                   </div>
                 </div>
-                <div class="row mb-4">
-                  <div class="col-md-3">
-                    <label class="form-label">Vencimiento</label>
-                    <input type="text" class="form-control">
-                  </div>
-                  <div class="col-md-3">
-                    <label class="form-label">CVV</label>
-                    <input type="text" class="form-control">
-                  </div>
+
+                <!-- Datos Yape/Plin -->
+                <div id="celularDatos" style="display:none;">
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                          <label for="numeroCelular" class="form-label">Número de celular</label>
+                          <input 
+                            type="text" 
+                            id="numeroCelular" 
+                            class="form-control" 
+                            value="987654321" 
+                            readonly>
+                          </input>
+                          <small class="text-muted">Número asociado a Yape o Plin</small>
+                      </div>
+                    </div>
                 </div>
+
+                <script>
+                  // Mostrar/ocultar según método de pago
+                  const radios = document.querySelectorAll('input[name="pago"]');
+                  const tarjetaDatos = document.getElementById('tarjetaDatos');
+                  const celularDatos = document.getElementById('celularDatos');
+
+                  radios.forEach(radio => {
+                    radio.addEventListener('change', () => {
+                      if (radio.value === 'visa') {
+                        tarjetaDatos.style.display = 'block';
+                        celularDatos.style.display = 'none';
+                      } else if (radio.value === 'yape' || radio.value === 'plin') {
+                        tarjetaDatos.style.display = 'none';
+                        celularDatos.style.display = 'block';
+                      } else {
+                        tarjetaDatos.style.display = 'none';
+                        celularDatos.style.display = 'none';
+                      }
+                    });
+                  });
+                </script>
+
                 <button type="submit" class="btn btn-primary w-100 mb-2">Continuar con el pago</button>
               </form>
             </div>
