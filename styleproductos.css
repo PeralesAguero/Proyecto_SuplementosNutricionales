@@ -28,3 +28,15 @@ body {
   margin-left: 250px;
   padding: 80px 30px;
 }
+
+/* Limita el tamaño de las imágenes y ajusta la tarjeta */
+.producto-img {
+  max-height: 160px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.producto-card {
+  font-size: 0.95rem;
+  padding: 0.5rem;
+}

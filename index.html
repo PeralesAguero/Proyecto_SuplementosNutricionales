@@ -15,6 +15,8 @@
 
   <!-- Estilos propios -->
   <link rel="stylesheet" href="style.css">
+  <script src="carrito.js"></script>
+  <script src="index.js"></script>
 </head>
 
 <body>
@@ -39,11 +41,22 @@
           <li class="nav-item ms-3">
             <a href="#" class="nav-link position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
               <i class="bi bi-cart3 fs-4"></i>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                3
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
+                0
                 <span class="visually-hidden">productos en el carrito</span>
               </span>
             </a>
+          </li>
+          <!-- Icono de usuario con dropdown -->
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle fs-3"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li>
+                <button class="dropdown-item text-danger" id="logout-btn">Cerrar sesión</button>
+              </li>
+            </ul>
           </li>
         </ul>
         <!-- Barra de busqueda -->
@@ -125,7 +138,7 @@
             <div class="card-body">
               <h5 class="card-title">Proteína Whey</h5>
               <p class="card-text">Aumenta tu masa muscular y mejora tu recuperación.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -137,7 +150,7 @@
             <div class="card-body">
               <h5 class="card-title">Creatina</h5>
               <p class="card-text">Mejora tu fuerza, potencia y rendimiento deportivo.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -149,7 +162,7 @@
             <div class="card-body">
               <h5 class="card-title">BCAA</h5>
               <p class="card-text">Recuperación y energía en entrenamientos intensos.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -161,7 +174,7 @@
             <div class="card-body">
               <h5 class="card-title">Pre-Workout</h5>
               <p class="card-text">Explosión de energía y enfoque para tus rutinas.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -173,7 +186,7 @@
             <div class="card-body">
               <h5 class="card-title">Multivitamínico</h5>
               <p class="card-text">Complejo vitamínico para tu salud y bienestar diario.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -185,7 +198,7 @@
             <div class="card-body">
               <h5 class="card-title">Omega 3</h5>
               <p class="card-text">Mejora la salud cardiovascular y cognitiva.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -197,7 +210,7 @@
             <div class="card-body">
               <h5 class="card-title">Carnitech Proteine</h5>
               <p class="card-text">Proporciona ganancia de peso y masa muscular.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -209,7 +222,7 @@
             <div class="card-body">
               <h5 class="card-title">Wey Protreine Vainilla</h5>
               <p class="card-text">Proporciona una recuperación muscular rapida.</p>
-              <a href="#" class="btn btn-primary w-100">Añadir al carrito</a>
+              <a href="#" class="btn btn-primary w-100 add-to-cart">Añadir al carrito</a>
             </div>
           </div>
         </div>
@@ -395,9 +408,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body">
-          <p class="text-center text-muted mb-4">
-            A continuación se muestra un formulario de ejemplo creado íntegramente con los controles de formulario de Bootstrap. Cada grupo de formularios obligatorio tiene un estado de validación que puede activarse al intentar enviar el formulario sin completarlo.
-          </p>
+          
           <div class="row">
             <div class="col-md-7">
               <h4 class="mb-3 fw-bold">Dirección de Envio</h4>
@@ -641,5 +652,6 @@
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>
 </body>
+<!-- Puedes poner esto al final del div .container de la navbar -->
 
 </html>

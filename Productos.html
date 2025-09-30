@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="styleproductos.css">
+  <script src="carrito.js"></script>
 </head>
+
 <body>
- <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm fixed-top">
     <div class="container">
       <a href="#" class="navbar-brand fw-bold"><span class="text-primary">Fit</span>Boost</a>
@@ -31,10 +34,21 @@
             <a href="#" class="nav-link position-relative" data-bs-toggle="modal" data-bs-target="#modalCarrito">
               <i class="bi bi-cart3 fs-4"></i>
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">
-                3
+                0
                 <span class="visually-hidden">productos en el carrito</span>
               </span>
             </a>
+          </li>
+          <!-- Icono de usuario con dropdown -->
+          <li class="nav-item dropdown ms-3">
+            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person-circle fs-3"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+              <li>
+                <button class="dropdown-item text-danger" id="logout-btn">Cerrar sesión</button>
+              </li>
+            </ul>
           </li>
         </ul>
         <!-- Barra de busqueda -->
@@ -52,7 +66,7 @@
   <div class="sidebar-lateral">
     <ul class="nav flex-column px-2">
       <li class="nav-item mb-2">
-        <a class="nav-link active d-flex align-items-center sidebar-btn" data-section="salud" href="#">
+        <a class="nav-link active d-flex align-items-center sidebar-btn" data-section="bienestarSalud" href="#">
           <i class="bi bi-heart-pulse me-2 fs-4"></i> Bienestar y Salud
         </a>
       </li>
@@ -65,7 +79,7 @@
         <a class="nav-link d-flex align-items-center sidebar-btn" data-section="muscular" href="#">
           <i class="bi bi-trophy me-2 fs-4"></i> Ganancia Muscular
         </a>
-      </li> 
+      </li>
       <li class="nav-item mb-2">
         <a class="nav-link d-flex align-items-center sidebar-btn" data-section="recuperacion" href="#">
           <i class="bi bi-activity me-2 fs-4"></i> Recuperación Muscular
@@ -84,217 +98,537 @@
     </ul>
   </div>
 
-<!-- Contenido principal -->
-<div class="contenido-principal">
-  
-  <!-- Secciones -->
+  <!-- Contenido principal -->
+  <div class="contenido-principal">
 
-  <div id="bienestarSalud" class="contenido-section">
-    <h2 class="mb-4">Bienestar y Salud</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/Multivitaminicos.jpg" class="card-img-top" alt="Vitaminas">
-          <div class="card-body">
-            <h5 class="card-title"> 8 Suplementos de Gym Multivitamínicos</h5>
-            <p class="card-text">Estos suplementos gym te ayudarán a obtener un excelente
-              entrenamiento en el gimnasio para ganar músculo y quemar grasa.
-              Los suplementos gym pueden</p>
+    <!-- Bienestar y Salud -->
+    <div id="bienestarSalud" class="contenido-section">
+      <h2 class="mb-4">Bienestar y Salud</h2>
+      <div class="row g-4">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/Multivitaminicos.jpg" class="card-img-top producto-img mx-auto" alt="8 Suplementos de Gym Multivitamínicos" style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">8 Suplementos de Gym Multivitamínicos</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/30.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/35.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart" style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="8 Suplementos de Gym Multivitamínicos" data-precio="30">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/omega3.jpeg" class="card-img-top" alt="Omega 3">
-          <div class="card-body">
-            <h5 class="card-title">Omega-3 Aceite de Pescado</h5>
-            <p class="card-text">GAT Sport Omega-3 aporta 800mg de ácidos grasos Omega-3.
-              Es bien sabido que los Omega-3 son excelentes para todos para la salud del
-              corazón. Pero para los atletas competitivos, los beneficios de Omega-3 va
-              mucho más allá. Los ácidos grasos Omega-3 pueden impulsar la salud general
-              y ofrecer beneficios que mejoran el rendimiento en los atletas.</p>
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/omega3.jpeg" class="card-img-top producto-img mx-auto" alt="Omega-3 Aceite de Pescado" style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Omega-3 Aceite de Pescado</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/25.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/30.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart" style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Omega-3 Aceite de Pescado" data-precio="25">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/colageno.png" class="card-img-top" alt="Colágeno">
-          <div class="card-body">
-            <h5 class="card-title">COLLAGEN PRO</h5>
-            <p class="card-text">Es un complemento rico en COLÁGENO, la proteína más
-              abundante del cuerpo y elemento principal de la piel, huesos, tendones,
-              cartílagos, vasos sanguíneos y dientes. “UN” elaboró un excelente producto
-              a base de COLÁGENO HIDROLIZADO que al combinarlo con la VITAMINA B6,VITAMINA C,
-              MAGNESIO Y ZINC potencia la acción
-              de esta proteína en el cuerpo.</p>
+        <!-- Producto 3 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/colageno.png" class="card-img-top producto-img mx-auto" alt="COLLAGEN PRO" style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">COLLAGEN PRO</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/28.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/32.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart" style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="COLLAGEN PRO" data-precio="28">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="energia" class="contenido-section d-none">
-    <h2 class="mb-4">⚡ Energía</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/preentreno.webp" class="card-img-top" alt="Pre-entreno">
-          <div class="card-body">
-            <h5 class="card-title">Pre-entreno</h5>
-            <p class="card-text">Son suplementos diseñados para mejorar el rendimiento,
-              aumentar la energía y concentración, y potenciar la fuerza y resistencia
-              durante el entrenamiento. En esta guía te explicamos qué son, para qué sirven,
-              cómo tomarlos, y qué opciones tenemos disponibles.</p>
+    <!-- Energía -->
+    <div id="energia" class="contenido-section d-none">
+      <h2 class="mb-4">⚡ Energía</h2>
+      <div class="row g-4">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/preentreno.webp" class="card-img-top producto-img mx-auto" alt="Pre-entreno"
+              style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Pre-entreno</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/22.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/28.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart"
+                style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Pre-entreno" data-precio="22">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/bebidaenergetica.jpg" class="card-img-top" alt="Bebida energética">
-          <div class="card-body">
-            <h5 class="card-title">Bebida Energética</h5>
-            <p class="card-text">La mejor bebida para consumir durante una larga sesión
-              de entrenamiento o competencia es el agua enriquecida con electrolitos,
-              como el potasio y el sodio, que ayuda a sustituir los minerales perdidos
-              a través del sudor.</p>
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/bebidaenergetica.jpg" class="card-img-top producto-img mx-auto" alt="Bebida Energética"
+              style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Bebida Energética</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/10.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/12.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart"
+                style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Bebida Energética" data-precio="10">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="muscular" class="contenido-section d-none">
-    <h2 class="mb-4">💪 Ganancia Muscular</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/proteinawhey.webp" class="card-img-top" alt="Proteína">
-          <div class="card-body">
-            <h5 class="card-title">Proteína Whey</h5>
-            <p class="card-text"> Es un subproducto del proceso de fabricación del queso.
-              Se obtiene del suero de leche, que es el líquido que queda después de la
-              coagulación de la leche. Este líquido es rico en proteínas de alto valor
-              biológico y se utiliza para elaborar suplementos nutricionales en polvo, así
-              como para fortificar alimentos como yogures y productos de panadería.</p>
+    <!-- Ganancia Muscular -->
+    <div id="muscular" class="contenido-section d-none">
+      <h2 class="mb-4">💪 Ganancia Muscular</h2>
+      <div class="row g-4">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/proteinawhey.webp" class="card-img-top producto-img mx-auto" alt="Proteína Whey"
+              style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Proteína Whey</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/35.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/40.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart"
+                style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Proteína Whey" data-precio="35">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/creatina.webp" class="card-img-top" alt="Creatina">
-          <div class="card-body">
-            <h5 class="card-title">Creatina</h5>
-            <p class="card-text"> Ácido α-metil guanido-acético, es un ácido orgánico
-              nitrogenado que se encuentra en los músculos y células nerviosas de algunos
-              organismos vivos. Se puede obtener tanto de manera.</p>
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/creatina.webp" class="card-img-top producto-img mx-auto" alt="Creatina"
+              style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Creatina</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/20.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/25.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart"
+                style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Creatina" data-precio="20">
+                Añadir al carrito
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="recuperacion" class="contenido-section d-none">
-    <h2 class="mb-4">🩹 Recuperación Muscular</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/bcaa.jpg" class="card-img-top" alt="BCAA">
-          <div class="card-body">
-            <h5 class="card-title">BCAA</h5>
-            <p class="card-text">Son un grupo de aminoácidos esenciales que incluyen leucina,
-              isoleucina y valina. Sirven para promover el aumento de masa muscular, regular
-              el sistema inmunológico, facilitar la recuperación tras el ejercicio y mantener
-              la salud del sistema nervioso. Además, los BCAA ayudan a preservar la masa muscular
-              durante entrenamientos intensivos y actúan como transportadores de nitrógeno, lo que
-              es crucial para la síntesis de nuevas fibras musculares. También son populares entre
-              los deportistas por sus beneficios en el rendimiento y la pérdida de grasa.</p>
+ 
+    <div id="recuperacion" class="contenido-section d-none">
+  <h2 class="mb-4">🩹 Recuperación Muscular</h2>
+  <div class="row g-4">
+    <!-- Producto 1 -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 shadow-sm producto-card text-center p-3">
+        <img src="imagenes/bcaa.jpg" class="card-img-top producto-img mx-auto" alt="BCAA"
+          style="width: 70%; height: 180px; object-fit: contain;">
+        <div class="card-body p-0 mt-3">
+          <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">BCAA</h5>
+          <div class="mb-2">
+            <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/18.00</span>
+            <span class="text-muted ms-2" style="text-decoration: line-through;">S/22.00</span>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/GLUTAMINA.jpg" class="card-img-top" alt="Glutamina">
-          <div class="card-body">
-            <h5 class="card-title">Glutamina</h5>
-            <p class="card-text">Es un aminoácido que juega un papel crucial en la formación de
-              proteínas y es considerado un inmunonutriente debido a su participación en la producción
-              de antioxidantes y en el mantenimiento de las funciones del sistema inmunológico. Además,
-              es conocido por su implicación en la recuperación muscular, siendo uno de los suplementos
-              más utilizados en el ámbito deportivo. La glutamina también proporciona nitrógeno al organismo,
-              lo que la convierte en una molécula ideal para diversas actividades metabólicas. Es importante
-              considerar su uso y dosis adecuadas, así como posibles efectos secundarios.</p>
-          </div>
+          <button class="btn w-100 fw-bold text-white add-to-cart"
+            style="background:#0d6efd; border-radius: 8px;"
+            data-nombre="BCAA" data-precio="18">
+            Añadir al carrito
+          </button>
         </div>
       </div>
     </div>
-  </div>
-
-  <div id="peso" class="contenido-section d-none">
-    <h2 class="mb-4">🔥 Pérdida de Peso</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/termogenico.jpg" class="card-img-top" alt="Termogénico">
-          <div class="card-body">
-            <h5 class="card-title">Termogénico</h5>
-            <p class="card-text">Los termogénicos son un tipo de moléculas capaz de aumentar la temperatura
-              del cuerpo. Los termogénicos no son capaces de eliminar grasa corporal de forma directa. Sin
-              embargo, uno de sus efectos es una mayor quema de grasas por al aumento de la actividad física.</p>
+    <!-- Producto 2 -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 shadow-sm producto-card text-center p-3">
+        <img src="imagenes/GLUTAMINA.jpg" class="card-img-top producto-img mx-auto" alt="Glutamina"
+          style="width: 70%; height: 180px; object-fit: contain;">
+        <div class="card-body p-0 mt-3">
+          <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Glutamina</h5>
+          <div class="mb-2">
+            <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/16.00</span>
+            <span class="text-muted ms-2" style="text-decoration: line-through;">S/20.00</span>
           </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <img src="imagenes/sustitutodecomida1.png" class="card-img-top" alt="Sustituto de comida">
-          <div class="card-body">
-            <h5 class="card-title">Sustituto de Comida</h5>
-            <p class="card-text">Son ideales para quemar grasa y proporcionan saciedad. Busca opciones con alto
-              contenido de fibra y bajo contenido de sodio.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="promos" class="contenido-section d-none">
-    <h2 class="mb-4">🎉 Promociones</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-success">
-          <div class="card-body">
-            <h5 class="card-title text-success">Combo Quemagrasa </h5>
-            <p class="card-text">Quemador + suplemento termogénico.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-primary">
-          <div class="card-body">
-            <h5 class="card-title text-primary">L-Cartinita 3000 + Lipo 6 UC + BCAA Amino Hydrate</h5>
-            <p class="card-text">L-carnitina liquida + quemador +aminoácidos.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-primary">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Mutant Whey + Creakong</h5>
-            <p class="card-text">20% de descuento en combo especial.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm border-primary">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Isophorm + Creatina</h5>
-            <p class="card-text">20% de descuento en combo especial.</p>
-          </div>
+          <button class="btn w-100 fw-bold text-white add-to-cart"
+            style="background:#0d6efd; border-radius: 8px;"
+            data-nombre="Glutamina" data-precio="16">
+            Añadir al carrito
+          </button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+    <!-- Pérdida de Peso -->
+    <div id="peso" class="contenido-section d-none">
+      <h2 class="mb-4">🔥 Pérdida de Peso</h2>
+      <div class="row g-4">
+        <!-- Producto 1 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/termogenico.jpg" class="card-img-top producto-img mx-auto" alt="Termogénico"
+              style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Termogénico</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/15.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/18.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart"
+                style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Termogénico" data-precio="15">
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm producto-card text-center p-3">
+            <img src="imagenes/sustitutodecomida1.png" class="card-img-top producto-img mx-auto" alt="Sustituto de Comida"
+              style="width: 70%; height: 180px; object-fit: contain;">
+            <div class="card-body p-0 mt-3">
+              <h5 class="card-title fw-bold mb-2" style="font-size: 1.1rem;">Sustituto de Comida</h5>
+              <div class="mb-2">
+                <span class="fw-bold text-primary" style="font-size: 1.3rem;">S/12.00</span>
+                <span class="text-muted ms-2" style="text-decoration: line-through;">S/15.00</span>
+              </div>
+              <button class="btn w-100 fw-bold text-white add-to-cart"
+                style="background:#0d6efd; border-radius: 8px;"
+                data-nombre="Sustituto de Comida" data-precio="12">
+                Añadir al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Promociones -->
+    <div id="promos" class="contenido-section d-none">
+      <h2 class="mb-4">🎉 Promociones</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-success">
+            <div class="card-body">
+              <h5 class="card-title text-success">Combo Quemagrasa </h5>
+              <p class="card-text">Quemador + suplemento termogénico.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+              <h5 class="card-title text-primary">L-Cartinita 3000 + Lipo 6 UC + BCAA Amino Hydrate</h5>
+              <p class="card-text">L-carnitina liquida + quemador +aminoácidos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Mutant Whey + Creakong</h5>
+              <p class="card-text">20% de descuento en combo especial.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm border-primary">
+            <div class="card-body">
+              <h5 class="card-title text-primary">Isophorm + Creatina</h5>
+              <p class="card-text">20% de descuento en combo especial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Modal Carrito de compras -->
+  <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-light">
+        <div class="modal-header border-0">
+          <h2 class="modal-title fw-bold w-100 text-center" id="modalCarritoLabel">Formulario de pago</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          
+          <div class="row">
+            <div class="col-md-7">
+              <h4 class="mb-3 fw-bold">Dirección de Envio</h4>
+              <form>
+                <div class="row mb-3">
+                  <div class="col">
+                    <label class="form-label">Nombres</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="col">
+                    <label class="form-label">Apellidos</label>
+                    <input type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Nombre de usuario</label>
+                  <div class="input-group">
+                    <span class="input-group-text">@</span>
+                    <input type="text" class="form-control" placeholder="Nombre de usuario">
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Correo electrónico <span class="text-muted">(opcional)</span></label>
+                  <input type="email" class="form-control" placeholder="tu@ejemplo.com">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">DIRECCIÓN</label>
+                  <input type="text" class="form-control" placeholder="1234 Calle Principal">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Dirección 2 <span class="text-muted">(Opcional)</span></label>
+                  <input type="text" class="form-control" placeholder="Apartamento o suite">
+                </div>
+
+                <div class="row g-3 mb-3">
+                <!-- País -->
+                <div class="col-md-4">
+                  <label for="pais" class="form-label">País</label>
+                  <select id="pais" name="pais" class="form-select" required>
+                    <option value="" selected disabled>Seleccione un país...</option>
+                    <option value="pe">Perú</option>
+                    <option value="mx">México</option>
+                    <option value="ar">Argentina</option>
+                    <option value="cl">Chile</option>
+                    <option value="es">España</option>
+                  </select>
+                </div>
+
+                <!-- Estado -->
+                <div class="col-md-4">
+                  <label for="estado" class="form-label">Estado / Provincia</label>
+                  <select id="estado" name="estado" class="form-select" required>
+                    <option value="" selected disabled>Seleccione un estado...</option>
+                    <!-- Aquí puedes cargar dinámicamente según el país -->
+                    <option value="lima">Lima</option>
+                    <option value="cusco">Cusco</option>
+                    <option value="arequipa">Arequipa</option>
+                  </select>
+                </div>
+
+                <!-- Código Postal -->
+                <div class="col-md-4">
+                  <label for="codigoPostal" class="form-label">Código Postal</label>
+                  <input 
+                    type="text" 
+                    id="codigoPostal" 
+                    name="codigoPostal" 
+                    class="form-control" 
+                    placeholder="Ej: 15001" 
+                    maxlength="10" 
+                    required>
+                </div>
+              </div>
+
+                <div class="form-check mb-2">
+                  <input type="checkbox" class="form-check-input" id="direccionIgual">
+                  <label class="form-check-label" for="direccionIgual">La dirección de envío es la misma que mi dirección de facturación.</label>
+                </div>
+                <div class="form-check mb-4">
+                  <input type="checkbox" class="form-check-input" id="guardarInfo">
+                  <label class="form-check-label" for="guardarInfo">Guarde esta información para la próxima vez.</label>
+                </div>
+                <hr>
+
+                <!-- Métodos de Pago -->
+                <div class="mb-3">
+                  <label class="mb-3 fw-bold">Método de Pago</label>
+
+                  <!-- Visa -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pago" id="visa" value="visa" checked>
+                    <label class="form-check-label" for="visa">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="height:20px;">
+                    </label>
+                  </div>
+
+                  <!-- Pago en efectivo -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pago" id="efectivo" value="efectivo">
+                    <label class="form-check-label" for="efectivo">
+                      <i class="bi bi-cash-coin text-success"></i> Pago en efectivo
+                    </label>
+                  </div>
+
+                  <!-- Yape -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pago" id="yape" value="yape">
+                    <label class="form-check-label" for="yape">
+                      <img src="/imagenes/yape.png" alt="Yape" style="height:20px;"> Yape
+                    </label>
+                  </div>
+
+                  <!-- Plin -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pago" id="plin" value="plin">
+                    <label class="form-check-label" for="plin">
+                      <img src="/imagenes/plin.png" alt="Plin" style="height:20px;"> Plin
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Datos de Tarjeta -->
+                <div id="tarjetaDatos">
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                      <label for="nombreTarjeta" class="form-label">Nombre en la tarjeta</label>
+                      <input type="text" id="nombreTarjeta" class="form-control" placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="numeroTarjeta" class="form-label">Número de Tarjeta</label>
+                      <input type="text" id="numeroTarjeta" class="form-control" placeholder="XXXX-XXXX-XXXX-XXXX">
+                    </div>
+                  </div>
+                  <div class="row mb-4">
+                    <div class="col-md-3">
+                      <label for="vencimiento" class="form-label">Vencimiento</label>
+                      <input type="text" id="vencimiento" class="form-control" placeholder="MM/AA">
+                    </div>
+                    <div class="col-md-3">
+                      <label for="cvv" class="form-label">CVV</label>
+                      <input type="text" id="cvv" class="form-control" placeholder="123">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Datos Yape/Plin -->
+                <div id="celularDatos" style="display:none;">
+                  <div class="row mb-3">
+                    <div class="col-md-6">
+                          <label for="numeroCelular" class="form-label">Número de celular</label>
+                          <input 
+                            type="text" 
+                            id="numeroCelular" 
+                            class="form-control" 
+                            value="987654321" 
+                            readonly>
+                          </input>
+                          <small class="text-muted">Número asociado a Yape o Plin</small>
+                      </div>
+                    </div>
+                </div>
+
+                <script>
+                  // Mostrar/ocultar según método de pago
+                  const radios = document.querySelectorAll('input[name="pago"]');
+                  const tarjetaDatos = document.getElementById('tarjetaDatos');
+                  const celularDatos = document.getElementById('celularDatos');
+
+                  radios.forEach(radio => {
+                    radio.addEventListener('change', () => {
+                      if (radio.value === 'visa') {
+                        tarjetaDatos.style.display = 'block';
+                        celularDatos.style.display = 'none';
+                      } else if (radio.value === 'yape' || radio.value === 'plin') {
+                        tarjetaDatos.style.display = 'none';
+                        celularDatos.style.display = 'block';
+                      } else {
+                        tarjetaDatos.style.display = 'none';
+                        celularDatos.style.display = 'none';
+                      }
+                    });
+                  });
+                </script>
+
+                <button type="submit" class="btn btn-primary w-100 mb-2">Continuar con el pago</button>
+              </form>
+            </div>
+            <div class="col-md-5">
+              <div class="d-flex align-items-center mb-3">
+                <h4 class="fw-bold text-primary mb-0">Tu carrito</h4>
+                <span class="badge bg-primary ms-2" style="font-size:1.2rem;">3</span>
+              </div>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0 fw-bold">Nombre del producto</h6>
+                    <small class="text-muted">Breve descripción</small>
+                  </div>
+                  <span class="text-muted">$12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0 fw-bold">Segundo producto</h6>
+                    <small class="text-muted">Breve descripción</small>
+                  </div>
+                  <span class="text-muted">$8</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 class="my-0 fw-bold">Tercer punto</h6>
+                    <small class="text-muted">Breve descripción</small>
+                  </div>
+                  <span class="text-muted">$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between bg-light">
+                  <div class="text-success">
+                    <h6 class="my-0 fw-bold">Código promocional</h6>
+                    <small>CÓDIGO DE EJEMPLO</small>
+                  </div>
+                  <span class="text-success">−$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span class="fw-bold">Total (USD)</span>
+                  <span class="fw-bold">$20</span>
+                </li>
+              </ul>
+              <form class="card p-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Código promocional">
+                  <button type="submit" class="btn btn-secondary">Canjear</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="productos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
